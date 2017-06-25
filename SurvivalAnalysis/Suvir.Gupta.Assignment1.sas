@@ -53,7 +53,7 @@ Data MYLIB.Hotel;
 	format checkin_date WEEKDATE10.;
 	format checkout_date WEEKDATE10.;
 	if use_of_internet = 'YES' then 
-		Subtotal_rate = (room_rate + 10*(number_of_guests-1))*(checkout_date-checkin_date) + 4.95*internet_use_days + 9.95;
+		Subtotal_rate = (room_rate + 10*(number_of_guests-1) + 4.95)*(checkout_date-checkin_date) + 9.95;
 	else Subtotal_rate = (room_rate + 10*(number_of_guests-1))*(checkout_date-checkin_date);
 	grand_total = Subtotal_rate + .0775*Subtotal_rate;
 	format grand_total dollarx10.2;
@@ -69,18 +69,17 @@ run;
 Proc Print data= MYLIB.Hotel_gtotal_sort(obs = 5);
 run;	
 
-/* Q2.f */
-proc means data = MYLIB.Hotel Mean STDDEV MIN MAX Median Mode  N;
-	class use_of_internet;
-	var number_of_guests;
-	title 'Descriptive Statistics of (Days of stay:No of guest)';
-run;
 
-/* Q2.g */
+/* Q2.f */
 proc freq data = MYLIB.Hotel;
 	Table  room_type*checkin_date ;
 	title 'Frequency Cross Tabulation (Room type: Checkin weekday)';
 run;
 
-
+/* Q2.g */
+proc means data = MYLIB.Hotel Mean STDDEV MIN MAX Median Mode  N;
+	class use_of_internet;
+	var number_of_guests;
+	title 'Descriptive Statistics of (Days of stay:No of guest)';
+run;
 
