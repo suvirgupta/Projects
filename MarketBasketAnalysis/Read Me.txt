@@ -1,2 +1,15 @@
 
-Instacart market basket analysis
+Instacart market basket analysis using spark
+
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 1.6.0
+      /_/
+
+Using Python version 2.7.13
+
+Model Used is general recommendation engine (collaborative filtering)
+library mllib.recommemdations , ALS , Rating
+
