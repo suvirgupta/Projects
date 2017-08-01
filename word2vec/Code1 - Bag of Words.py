@@ -3,7 +3,7 @@
 Spyder Editor
 
 This is a temporary script file.
-@author: raghav
+@author: Suvir
 
 """
 
@@ -27,10 +27,10 @@ from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 
 
-train = pd.read_csv('C:/Users/ragha/Downloads/labeledTrainData1.csv', header=0)
+train = pd.read_csv('C:/Users/suvir/Downloads/labeledTrainData1.csv', header=0)
 
 t1 = train.ix[0:20000,]
-t2 = pd.read_csv('C:/Users/ragha/Downloads/labeledTrainData2.csv', header=0)
+t2 = pd.read_csv('C:/Users/suvir/Downloads/labeledTrainData2.csv', header=0)
 t1.shape
 t2.shape
 
@@ -174,11 +174,11 @@ train_predict = forest.predict(test_data_features)
 
 # Read the test data
 
-test = pd.read_csv("C:/Users/ragha/Downloads/testData.tsv", header=0, delimiter="\t", \
+test = pd.read_csv("C:/Users/suvir/Downloads/testData.tsv", header=0, delimiter="\t", \
                    quoting=3 )
 
 
-outcome = pd.read_csv("C:/Users/ragha/Downloads/Bag_of_Words_model_prediction.csv", header=0, delimiter="\t", \
+outcome = pd.read_csv("C:/Users/suvir/Downloads/Bag_of_Words_model_prediction.csv", header=0, delimiter="\t", \
                    quoting=3 )
 
 # Verify that there are 25,000 rows and 2 columns
