@@ -2,7 +2,7 @@
 """
 Created on Mon Apr 24 20:34:26 2017
 
-@author: raghav
+@author: Suvir Gupta
 """
 
 import os
@@ -30,10 +30,10 @@ train = pd.read_csv('C:/Users/ragha/Downloads/labeledTrainData1.csv', header=0)
 t1 = train.ix[0:20000,]
 t1.shape
 
-t2 = pd.read_csv('C:/Users/ragha/Downloads/labeledTrainData2.csv', header=0)
+t2 = pd.read_csv('C:/Users/Suvir/Downloads/labeledTrainData2.csv', header=0)
 t2.shape
 
-test = pd.read_csv( "C:/Users/ragha/Downloads/testData.tsv", header=0, delimiter="\t", quoting=3 )
+test = pd.read_csv( "C:/Users/Suvir/Downloads/testData.tsv", header=0, delimiter="\t", quoting=3 )
 test.shape
 
 unlabeled_train = pd.read_csv( "C:/Users/ragha/Downloads/unlabeledTrainData.tsv", 
