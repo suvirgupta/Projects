@@ -45,7 +45,7 @@ convolute.fit_generator(
 from keras.preprocessing import image
 import numpy as np
 
-image_load = image.load_img(r'C:\Users\Suvir Gupta\PycharmProjects\Projects\word2vec\nueral net\data\data_cnn\single_prediction\cat_or_dog_1.jpg',
+image_load = image.load_img(r'C:\Users\Suvir Gupta\PycharmProjects\Projects\word2vec\nueral net\data\data_cnn\single_prediction\cat_or_dog_2.jpg',
                             target_size = (64,64))
 test_image = image.img_to_array(image_load)
 test_image = np.expand_dims(test_image, axis = 0)
