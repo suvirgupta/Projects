@@ -80,3 +80,14 @@ rmse = math.sqrt(mean_squared_error(series, y_pred))
 
 
 
+## input preprocessing to train on data for last 20 days to get much better predictions
+X_train = []
+Y_train = []
+for i in range(20, 1258):
+    X_train.append(series_train[i-20:i, 0])
+    Y_train.append(series_train[i, 0])
+X_train, Y_train = np.array(X_train), np.array(Y_train)
+X_train.shape
+X_train = np.reshape(X_train,(1238,20,1))
+
+
