@@ -5,6 +5,7 @@ from keras.layers import Dense, MaxPooling2D, Flatten, Convolution2D
 ## initialising the Sequential class
 
 convolute = Sequential()
+### To give strid value we have subsample attribite by default initialized to 1
 convolute.add(Convolution2D(32,3,3,input_shape=(64,64,3),activation = 'relu'))
 convolute.add(MaxPooling2D(pool_size= (2,2)))
 convolute.add(Flatten())
