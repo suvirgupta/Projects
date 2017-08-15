@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6.1 (C:\Users\Suvir Gupta\Anaconda3\python.exe)" project-jdk-type="Python SDK" />
+  <component name="IpnbSettings">
+    <option name="arguments" value="--NotebookApp.iopub_data_rate_limit=10000000000" />
+    <option name="workingDirectory" value="$PROJECT_DIR$" />
+    <option name="URL" value="http://127.0.0.1:8880" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.13 (~/anaconda2/bin/python)" project-jdk-type="Python SDK" />
 </project>
