@@ -4,7 +4,6 @@
 
 #  Refering to paper on Factorizing Personalized Markov Chains for Next-Basket Recommendation
 #  BY Steffen Rendle, Christoph Freudenthaler Lars Schmidt-Thieme
-### I am only trying to implement the generalized Markov chain model not the personalized one but it also has memory issue
 #### reference link
 ### https://www.ismll.uni-hildesheim.de/pub/pdfs/RendleFreudenthaler2010-FPMC.pdf
 ####################################################################################################################################################
