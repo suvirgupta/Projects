@@ -1,5 +1,8 @@
+# Using word vectorization technique to find out product in context of a product purchased in one transaction
 # Dimention reduction and vector representation of User transition matrix
-
+# based on word vectorization and Miklov model of vectorization and finding cosine similarity in vectors to find the context of product
+#in sequence
+## paper:http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
 ###########################################################################################################
 # Going Further into this problem of higher memory consumption in terms of Markov chain model
 # to implement user transition matrix in general and user specific
