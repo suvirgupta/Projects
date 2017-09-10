@@ -1,0 +1,96 @@
+
+-- Create Equipment Table
+create table Equipment (
+Equipment_id Integer,
+Equipment_Name  Varchar(500),
+Type  Integer,
+Description varchar(500),
+constraint pk_Equipment_ID primary key (Equipment_id)
+);
+
+--Create Equipment_one Table
+create table equipment_one 
+(
+Equipment_Id Integer,
+comments VARCHAR(500),
+constraint pk_equipment_id_one PRIMARY key (Equipment_Id)
+);
+
+--Create Type_3_Equipments_staging
+Create Table  Type_3_Equipments_Staging 
+(
+Type_3_Equipment_Id Integer,
+Issuing_Agency Varchar2(500),
+Device_Identifier Integer,
+Device_count Integer,
+Brand_Name Varchar2(500),
+Model_Number Integer,
+Packaging_type  varchar2(500),
+closing_Date Date,
+Final_Status varchar(500), 
+Constraint pk_Type_3_equip primary Key (Type_3_Equipment_Id)
+)
+
+
+--Create Type_3_Equipments_final
+Create Table  Type_3_Equipments_final
+(
+Type_3_Equipment_Id integer,
+Issuing_Agency Varchar2(500),
+Device_Identifier integer,
+Device_count integer,
+Brand_Name Varchar2(500),
+Model_Number integer,
+Packaging_type  varchar2(500),
+closing_Date Date,
+Constraint pk_Type_3_equip_final primary Key (Type_3_Equipment_Id)
+)
+
+
+-- Create Change_request Table
+create table Change_Request 
+(
+Request_ID integer Not null,
+Type_3_Equipment_Id integer,
+Request_Type varchar(500),
+Create_Date Date,
+Description varchar(500),
+cr_status  varchar2(50),
+constraint pk_Request_Id primary key (Request_ID),
+constraint fk_Type_3_equipment foreign key (Type_3_Equipment_Id)references  Equipment(Equipment_id)
+);
+
+create Table Step  
+(
+Step_id integer Not null,
+Description varchar(500),
+Constraint Pk_StepID primary key(Step_id)
+);
+
+
+create table Employee 
+(
+Employee_Id integer Not null,
+Employee_Name Varchar(500),
+Employee_Position varchar(500),
+Hire_date Date,
+Constraint pk_Employee_id primary key (Employee_Id)
+);
+
+create table Workflow 
+(
+Workflow_ID integer Not null,
+Step_Id integer,
+Assigned_To_Id INTEGER ,
+CR_ID INTEGER,
+Start_Date  Date,
+Finish_Date Date,
+wf_Status Varchar2(50),
+Assigned_By_ID integer,
+constraint pk_workflow_id primary key (Workflow_ID),
+constraint fk_CR_Step foreign key (Step_Id) REFERENCES Step(Step_id),
+Constraint fk_Assigned_To_Id foreign key (Assigned_To_Id) references Employee(Employee_Id),
+Constraint fk_Assigned_By_ID foreign key (Assigned_By_ID) references Employee(Employee_Id),
+Constraint fk_CR_ID foreign key (CR_ID) references Change_Request(Request_ID)
+);
+
