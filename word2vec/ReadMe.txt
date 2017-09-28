@@ -10,8 +10,12 @@ This relatinship is captured by above models
 
 Project is to implement 3 different model of word vectorization using 3 differnt libraries in python.
 
-Apart from that there are some other information and projects on ANN(logistic regression with parameter tuning using gridcv),
-LSTM(time series prediction using stocastic model), CNN(dog cat image recognition)
+Apart from that there are some other information and projects on 
+ANN(logistic regression with parameter tuning using gridcv),
+LSTM(time series prediction using stocastic model), 
+CNN(dog cat image recognition)
+Link: https://github.com/suvirgupta/Projects/tree/master/word2vec/nueral%20net
+
 
 Models for word vectoriztion:
 1 BOW(bag of words)
