@@ -10,7 +10,7 @@ Welcome to
 
 Using Python version 2.7.13
 
-proprocessing steps are applied to 3 million user rows with partitioning for fast processing and transformation using spark.
+preprocessing steps are applied to 3 million user rows with partitioning for fast processing and transformation using spark.
 https://github.com/suvirgupta/Projects/blob/master/MarketBasketAnalysis/preprocess.ipynb
 
 There are three models that can be used to predict the sequential buying behaviour of customer
@@ -32,20 +32,21 @@ userid , productid and count
  [65538, 22935, 4],
  [65538, 22170, 7]]
  
- here each user and count of product id and no of times product is purchased in all transaction is present
+ here each user, product id and no of times product is purchased in all transaction is present
  
- user to user * product matrix is built using count and decomposed to give lower dimention components of matrix
+ user * product matrix is built using count and decomposed to give lower dimention components of matrix
  
  matrix muliplication can be done of the decomposed component to get the recomendation for products or probabilty rating of purchase 
  for that product. But user product matrix is generic in nature and does not take into account sequential buying pattern
- I does not give user specific sequential results.
+ It does not give user specific sequential buying result i.e it will give result high frequency purchases but buying behaviours next
+ transction of user depend on the purchases in previous transaction not taken into consideration by matrix factorization.
  
  
  2. Markov model | link: https://github.com/suvirgupta/Projects/blob/master/MarketBasketAnalysis/Markov_Chain.py
  
  Markov model takes into consideration user specific sequential buying behaviour with product to product transition matrix 
  for each user sperately as shown in the code in above link
- But the computation capacity of 50000*50000 product transition matrix is very high as it takes high ramcapability
+ But the computation capacity of 50000*50000 product transition matrix is very high as it takes high ram capability
  
  
  3. Miklov Model (word2vec)}| https://github.com/suvirgupta/Projects/blob/master/MarketBasketAnalysis/user.trans_vector.py
@@ -53,7 +54,7 @@ userid , productid and count
  with input as product id in the first transaction as output as the product purchses in the second transaction and so on to get 
  lower dimention vector repesentation of product ids that are user specific .
  
- one can find cosine similarity in between the product ids to find the closer product to be purchased in next transition.
+ one can find cosine similarity in between the product ids vectors to find the closer product to be purchased in next transition.
  
  
  
