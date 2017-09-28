@@ -1,0 +1,37 @@
+
+
+Project is to take world news data for the past 8 years and use it to predict the variations in the Stock price.
+
+Data Consist of:
+
+1.  Top 25 headlines are considered for a single date. (Range: 2008-06-08 to 2016-07-01) ranked by users.
+2.  Stock data: Dow Jones Industrial Average (DJIA) is used to "prove the concept". (Range: 2008-08-08 to 2016-07-01)
+
+
+Approach used here is:
+To preprocess the data using NLTK library tokenize,removing stopwords, stemming, cleaning the news data
+Vectorising the words using document term matrix(DTM). 
+Try 1-gram, 2-gram, 3-gram.....n-gram vectors with increasing DTM size to get the optimum prediction with minimum memory usage
+
+Since the world news has lot of redundant data normal regression techniques are ineffective on vectorized data.
+
+So one has to use topic modelling technique to extract data related to financial crised and dates according to it.
+
+Since any financial crisis does not happen in single day it can be carried over to months. Hence took document size to be monthly
+rather than single day.
+
+we used topic modelling techniques like LSA(Latent semantic analysis), LDA(Latent Dirichlet allocation) and even clustering techniques on 
+the word vectors to get the cluster of words that are more linked to topic of finance.
+we got better results with LDA using 17 , 20 clusters.
+
+document names were according to the monthly dates as explained earlier. 
+using LDA we can extract the dates that have high percentage of cluster having more of financial words.
+
+Hence we manged to extract the dates like great ression of 2008, global crisis in chinese financial market 2011, Br exit
+
+USED these dates extracted as an intervention in the ARIMA models for stock prediction 
+
+first order differencing of the stock opening price give the variation close to these dates hence the dates can be used as 
+a point intervention to our arima model.
+
+
